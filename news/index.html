@@ -1,0 +1,14 @@
+---
+layout: news
+---
+
+<strong>Most recent news</strong>
+
+<ul>
+	{% for news in site.posts %}
+	<li>
+		<a href="{{site.baseurl}}{{news.url}}">{{news.title}}</a>
+		<p>{{news.meta}}</p>
+	</li>
+	{% endfor %}
+</ul>
