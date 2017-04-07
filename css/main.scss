@@ -164,13 +164,6 @@ p
 			padding-right: 10px;
 		}
 
-		/*img
-		{
-			width: 160px;
-			border-radius: 160px;
-			z-index: -1;
-		}*/
-
 		ul
 		{
 			margin: 0 0 20px 0;
@@ -238,7 +231,7 @@ footer
 	clear: both;
 	font-family: 'Ubuntu', sans-serif;
 	color: $whiteFontColor;
-	position: relative;
+	position: absolute;
 	margin: 0;
 	right: 0;
 	bottom: 0;

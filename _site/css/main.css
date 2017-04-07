@@ -82,13 +82,7 @@ p {
   height: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
-  /*img
-  {
-  	width: 160px;
-  	border-radius: 160px;
-  	z-index: -1;
-  }*/ }
+  text-align: center; }
   .container .sidebar hr {
     border-style: solid;
     border-width: 1px;
@@ -143,7 +137,7 @@ footer {
   clear: both;
   font-family: 'Ubuntu', sans-serif;
   color: #f0f0f0;
-  position: relative;
+  position: absolute;
   margin: 0;
   right: 0;
   bottom: 0;
