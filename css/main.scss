@@ -19,6 +19,10 @@ $whiteFontColor: rgb(240, 240, 240);
 $middleToneFontColor: rgb(80, 80, 80);
 $darkFontColor: rgb(20, 20, 20);
 
+$transitionSlow: 300ms;
+$transitionNormal: 150ms;
+$transitionFast: 100ms;
+
 html
 {
 	margin: 0;
@@ -40,6 +44,40 @@ p
 	padding-left: 20px;
 }
 
+.news-list
+{
+	list-style-type: none;
+
+	.news-topic
+	{
+		margin-bottom: 40px;
+		padding: 0 20px 10px 0;
+		color: $whiteGray;
+		background-color: $darkGray;
+		border-radius: 5px;
+		box-shadow: 2px 2px 3px 1px $darkShadow;
+	}
+
+	a
+	{
+		margin: 0;
+		padding: 5px 5px 5px 5px;
+		color: $navyBlue;
+		border-radius: 8px;
+		background-color: $lightBlue;
+		text-decoration: none;
+		box-shadow: 3px 3px 2px 1px $darkShadow;
+
+		&:hover
+		{
+			color: $white;
+			background-color: $darkBlue;
+			font-weight: bold;
+			transition: color $transitionFast linear, background-color $transitionFast linear, font-weight $transitionFast linear;
+		}
+	}
+}
+
 .portrait-anim
 {
 	margin-top: 10px;
@@ -49,7 +87,7 @@ p
 	width: 160px;
 	height: 160px;
 	box-shadow: inset 0px 0px 10px 2px $darkShadow;
-	background: url('../img/avatar_portrait.jpg');
+	background: url('../img/avatar_portrait_2.jpg');
 	background-size: 160px 160px;
 
 	&:hover
@@ -159,8 +197,7 @@ p
 			{
 				color: $darkFontColor;
 				background-color: $whiteGray;
-				transition: color 300ms linear;
-				transition: background-color 100ms linear;
+				transition: color $transitionSlow linear, background-color $transitionFast linear;
 			}
 		}
 	}
@@ -283,8 +320,7 @@ footer
 			box-shadow: inset 0px 0px 0px $darkShadow;
 			background-color: $whiteGray;
 			text-shadow: 1px 1px 1px $darkShadow;
-			transition: background-color 100ms linear;
-			transition: color 300ms linear;
+			transition: color $transitionSlow linear, background-color $transitionFast linear;
 		}
 	}
 }

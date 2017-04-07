@@ -13,6 +13,29 @@ body {
 p {
   padding-left: 20px; }
 
+.news-list {
+  list-style-type: none; }
+  .news-list .news-topic {
+    margin-bottom: 40px;
+    padding: 0 20px 10px 0;
+    color: gainsboro;
+    background-color: #3c3c3c;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 1px #1e1e1e; }
+  .news-list a {
+    margin: 0;
+    padding: 5px 5px 5px 5px;
+    color: #00173d;
+    border-radius: 8px;
+    background-color: #8cbdff;
+    text-decoration: none;
+    box-shadow: 3px 3px 2px 1px #1e1e1e; }
+    .news-list a:hover {
+      color: #f0f0f0;
+      background-color: #153477;
+      font-weight: bold;
+      transition: color 100ms linear, background-color 100ms linear, font-weight 100ms linear; }
+
 .portrait-anim {
   margin-top: 10px;
   display: inline-block;
@@ -21,7 +44,7 @@ p {
   width: 160px;
   height: 160px;
   box-shadow: inset 0px 0px 10px 2px #1e1e1e;
-  background: url("../img/avatar_portrait.jpg");
+  background: url("../img/avatar_portrait_2.jpg");
   background-size: 160px 160px; }
   .portrait-anim:hover {
     background: url("../img/avatar_portrait_anim.gif");
@@ -93,8 +116,7 @@ p {
     .container .sidebar li a:hover {
       color: #141414;
       background-color: gainsboro;
-      transition: color 300ms linear;
-      transition: background-color 100ms linear; }
+      transition: color 300ms linear, background-color 100ms linear; }
 
 h1 {
   font-size: 1.75rem;
@@ -178,8 +200,7 @@ footer {
       box-shadow: inset 0px 0px 0px #1e1e1e;
       background-color: gainsboro;
       text-shadow: 1px 1px 1px #1e1e1e;
-      transition: background-color 100ms linear;
-      transition: color 300ms linear; }
+      transition: color 300ms linear, background-color 100ms linear; }
 
 .nav-top {
   padding-right: 200px;
