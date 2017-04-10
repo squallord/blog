@@ -1,4 +1,6 @@
 html {
+  height: 100%;
+  min-width: 1024px;
   margin: 0;
   padding: 0;
   background: linear-gradient(to left, #c3cef7 300px, #1e1e1e 3px, #f0f0f0 303px);
@@ -6,12 +8,24 @@ html {
   font: normal 100%/1.4 liberation sans, serif; }
 
 body {
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0; }
 
 p {
+  font-size: 1.25rem;
   padding-left: 20px; }
+
+strong {
+  font-size: 1.25rem; }
+
+.center-image {
+  margin: 0 auto;
+  display: block; }
+
+.drop-shadow-image {
+  box-shadow: 0 0 4px 1px #1e1e1e; }
 
 .news-list {
   list-style-type: none; }
@@ -22,19 +36,21 @@ p {
     background-color: #3c3c3c;
     border-radius: 5px;
     box-shadow: 2px 2px 3px 1px #1e1e1e; }
-  .news-list a {
-    margin: 0;
-    padding: 5px 5px 5px 5px;
-    color: #00173d;
-    border-radius: 8px;
-    background-color: #8cbdff;
-    text-decoration: none;
-    box-shadow: 3px 3px 2px 1px #1e1e1e; }
-    .news-list a:hover {
-      color: #f0f0f0;
-      background-color: #153477;
-      font-weight: bold;
-      transition: color 100ms linear, background-color 100ms linear, font-weight 100ms linear; }
+    .news-list .news-topic a {
+      margin: 0;
+      padding: 5px 5px 5px 5px;
+      color: #00173d;
+      border-radius: 8px;
+      background-color: #8cbdff;
+      text-decoration: none;
+      box-shadow: 3px 3px 2px 1px #1e1e1e; }
+      .news-list .news-topic a:hover {
+        color: #f0f0f0;
+        background-color: #153477;
+        font-weight: bold;
+        transition: color 100ms linear, background-color 100ms linear, font-weight 100ms linear; }
+    .news-list .news-topic p {
+      font-size: 1rem; }
 
 .portrait-anim {
   margin-top: 10px;
@@ -67,50 +83,50 @@ p {
       position: relative;
       z-index: -1; }
 
-.container .content {
-  min-width: 600px;
-  overflow: auto;
-  margin: 0;
-  padding: 10px 50px 5px 100px;
-  height: 100%; }
-  .container .content p {
-    text-align: justify;
-    text-justify: inter-word; }
-.container .sidebar {
-  float: right;
-  width: 300px;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center; }
-  .container .sidebar hr {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #f0f0f0; }
-  .container .sidebar p {
-    padding-left: 10px;
-    padding-right: 10px; }
-  .container .sidebar ul {
-    margin: 0 0 20px 0;
+.container {
+  margin-bottom: 100px;
+  min-height: 100%; }
+  .container .content {
+    overflow: auto;
+    margin: 0;
+    padding: 50px 150px 5px 100px; }
+    .container .content p {
+      text-align: justify;
+      text-justify: inter-word; }
+  .container .sidebar {
+    float: right;
+    width: 300px;
+    margin: 0;
     padding: 0;
-    list-style-type: none;
-    overflow: hidden; }
-  .container .sidebar li a {
-    display: inline-block;
-    font-weight: bold;
-    text-decoration: none;
-    float: center;
-    color: gainsboro;
-    background-color: #00173d;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #1e1e1e;
-    width: 40%;
-    padding: 5px 0 5px 0;
-    margin: 5px; }
-    .container .sidebar li a:hover {
-      color: #141414;
-      background-color: gainsboro;
-      transition: color 300ms linear, background-color 100ms linear; }
+    text-align: center; }
+    .container .sidebar hr {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #f0f0f0; }
+    .container .sidebar p {
+      padding-left: 10px;
+      padding-right: 10px; }
+    .container .sidebar ul {
+      margin: 0 0 20px 0;
+      padding: 0;
+      list-style-type: none;
+      overflow: hidden; }
+    .container .sidebar li a {
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      float: center;
+      color: gainsboro;
+      background-color: #00173d;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #1e1e1e;
+      width: 40%;
+      padding: 5px 0 5px 0;
+      margin: 5px; }
+      .container .sidebar li a:hover {
+        color: #141414;
+        background-color: gainsboro;
+        transition: color 300ms linear, background-color 100ms linear; }
 
 h1 {
   font-size: 1.75rem;
@@ -125,6 +141,7 @@ h1 {
     text-decoration: none; }
 
 h2 {
+  margin: 0;
   color: #141414; }
 
 header {
@@ -134,10 +151,12 @@ header {
   box-shadow: 0 2px 1px #1e1e1e; }
 
 footer {
-  clear: both;
   font-family: 'Ubuntu', sans-serif;
   color: #f0f0f0;
-  position: absolute;
+  position: relative;
+  bottom: 0;
+  height: 1.5rem;
+  width: 100%;
   margin: 0;
   right: 0;
   bottom: 0;
@@ -153,7 +172,7 @@ footer {
     border-top-width: 1px;
     box-shadow: 1px 1px 1px #1e1e1e; }
   footer p {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     margin: 0;
     text-shadow: 1px 1px 1px #1e1e1e; }
 

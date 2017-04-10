@@ -1,2 +1,4 @@
 baseurl: ""
+markdown: kramdown
+highlighter: rouge
 exclude: ['README.md']

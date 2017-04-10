@@ -6,6 +6,7 @@ $lightGray: rgb(180, 180, 180);
 $middleGray: rgb(120, 120, 120);
 $darkGray: rgb(60, 60, 60);
 $darkShadow: rgba(30, 30, 30, 1);
+$transparent: rgba(255, 255, 255, 0);
 
 $whiteBlue: rgb(195, 206, 247);
 $lightBlue: rgb(140, 189, 255);
@@ -23,8 +24,20 @@ $transitionSlow: 300ms;
 $transitionNormal: 150ms;
 $transitionFast: 100ms;
 
+$minResolution: 1024px;
+
+$fontSizeH1: 1.75rem;
+$fontSizeArticleTitle: 1.50rem;
+$fontSizeArticle: 1.25rem;
+$fontSizeDefault: 1.00rem;
+$fontSizeSmall: 0.90rem;
+$fontSizeNavTop: 1.25rem;
+$fontSizeFooter: 1.50rem;
+
 html
 {
+	height: 100%;
+	min-width: $minResolution;
 	margin: 0;
 	padding: 0;
 	background: linear-gradient(to left, $whiteBlue $sideBarWidth, $darkShadow 3px, $white $sideBarWidth + 3px);
@@ -34,6 +47,7 @@ html
 
 body
 {
+	height: 100%;
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	padding: 0;
@@ -41,7 +55,24 @@ body
 
 p
 {
+	font-size: $fontSizeArticle;
 	padding-left: 20px;
+}
+
+strong
+{
+	font-size: $fontSizeArticle;
+}
+
+.center-image
+{
+	margin: 0 auto;
+	display: block;
+}
+
+.drop-shadow-image
+{
+	box-shadow: 0 0 4px 1px $darkShadow;
 }
 
 .news-list
@@ -56,26 +87,32 @@ p
 		background-color: $darkGray;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px 1px $darkShadow;
-	}
 
-	a
-	{
-		margin: 0;
-		padding: 5px 5px 5px 5px;
-		color: $navyBlue;
-		border-radius: 8px;
-		background-color: $lightBlue;
-		text-decoration: none;
-		box-shadow: 3px 3px 2px 1px $darkShadow;
-
-		&:hover
+		a
 		{
-			color: $white;
-			background-color: $darkBlue;
-			font-weight: bold;
-			transition: color $transitionFast linear, background-color $transitionFast linear, font-weight $transitionFast linear;
+			margin: 0;
+			padding: 5px 5px 5px 5px;
+			color: $navyBlue;
+			border-radius: 8px;
+			background-color: $lightBlue;
+			text-decoration: none;
+			box-shadow: 3px 3px 2px 1px $darkShadow;
+
+			&:hover
+			{
+				color: $white;
+				background-color: $darkBlue;
+				font-weight: bold;
+				transition: color $transitionFast linear, background-color $transitionFast linear, font-weight $transitionFast linear;
+			}
+		}
+
+		p
+		{
+			font-size: $fontSizeDefault;
 		}
 	}
+	
 }
 
 .portrait-anim
@@ -127,14 +164,15 @@ p
 
 .container
 {
+	margin-bottom: 100px;
+	min-height: 100%;
+
 	.content
 	{
-		min-width: 600px;
 		overflow: auto;
 		margin: 0;
-		padding: 10px 50px 5px 100px;
-		height: 100%;
-
+		padding: 50px 150px 5px 100px;
+		
 		p
 		{
 			text-align: justify;
@@ -146,7 +184,6 @@ p
 	{
 		float: right;
 		width: $sideBarWidth;
-		height: 100%;
 		margin: 0;
 		padding: 0;
 		text-align: center;
@@ -198,7 +235,7 @@ p
 
 h1
 {
-	font-size: 1.75rem;
+	font-size: $fontSizeH1;
 	margin: 0;
 	padding: 0;
 	color: $whiteFontColor;
@@ -215,6 +252,7 @@ h1
 
 h2
 {
+	margin: 0;
 	color: $darkFontColor;
 }
 
@@ -228,10 +266,12 @@ header
 
 footer
 {
-	clear: both;
 	font-family: 'Ubuntu', sans-serif;
 	color: $whiteFontColor;
-	position: absolute;
+	position: relative;
+	bottom: 0;
+	height: $fontSizeFooter;
+	width: 100%;
 	margin: 0;
 	right: 0;
 	bottom: 0;
@@ -252,7 +292,7 @@ footer
 
 	p
 	{
-		font-size: 0.9em;
+		font-size: $fontSizeSmall;
 		margin: 0;
 		text-shadow: 1px 1px 1px $darkShadow;
 	}
@@ -321,7 +361,7 @@ footer
 .nav-top
 {
 	padding-right: 200px;
-	font-size: 1.25rem;
+	font-size: $fontSizeNavTop;
 	text-align: left;
 	box-shadow: 0px 2px 1px $darkShadow;
 }
