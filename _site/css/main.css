@@ -104,6 +104,7 @@ strong {
       border-width: 1px;
       border-color: #f0f0f0; }
     .container .sidebar p {
+      font-size: 1rem;
       padding-left: 10px;
       padding-right: 10px; }
     .container .sidebar ul {
