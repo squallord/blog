@@ -59,7 +59,7 @@ strong {
   border-radius: 160px;
   width: 160px;
   height: 160px;
-  box-shadow: inset 0px 0px 10px 2px #1e1e1e;
+  box-shadow: inset 0px 0px 20px 5px #1e1e1e;
   background: url("../img/avatar_portrait_2.jpg");
   background-size: 160px 160px; }
   .portrait-anim:hover {

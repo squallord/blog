@@ -5,6 +5,7 @@
 		<title>Squallord's Blog</title>
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Droid" rel="stylesheet">
+		<link href="/css/syntax.css" rel="stylesheet">
 	</head>
 	
 	<body>
@@ -42,7 +43,7 @@
 			</div>
 
 			<div class="content">
-				<strong>Etapas do desenvolvimento de um programa de colagem de fotos em Python 2.7.x</strong>
+				<h2 id="etapas-do-desenvolvimento-de-um-programa-de-colagem-de-fotos-em-python-27x">Etapas do desenvolvimento de um programa de colagem de fotos em Python 2.7.x</h2>
 
 <p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
 
@@ -58,16 +59,6 @@
 
 <p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">show</span>
-  <span class="nd">@widget</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[:</span><span class="nb">id</span><span class="p">])</span>
-  <span class="n">respond_to</span> <span class="n">do</span> <span class="o">|</span><span class="n">format</span><span class="o">|</span>
-    <span class="n">format</span><span class="o">.</span><span class="n">html</span> <span class="c"># show.html.erb</span>
-    <span class="n">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">render</span> <span class="n">json</span><span class="p">:</span> <span class="nd">@widget</span> <span class="p">}</span>
-  <span class="n">end</span>
-<span class="n">end</span>
-</code></pre>
-</div>
-
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">show</span>
   <span class="vi">@widget</span> <span class="o">=</span> <span class="no">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
   <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
@@ -76,20 +67,37 @@
   <span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">function</span> <span class="n">test</span><span class="p">():</span>
-<span class="p">{</span>
- <span class="k">print</span> <span class="s">"notice the blank line before this function?"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">show</span>
+  <span class="nd">@widget</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[:</span><span class="nb">id</span><span class="p">])</span>
+  <span class="n">respond_to</span> <span class="n">do</span> <span class="o">|</span><span class="n">format</span><span class="o">|</span>
+    <span class="n">format</span><span class="o">.</span><span class="n">html</span> <span class="c"># show.html.erb</span>
+    <span class="n">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">render</span> <span class="n">json</span><span class="p">:</span> <span class="nd">@widget</span> <span class="p">}</span>
+  <span class="n">end</span>
+<span class="n">end</span></code></pre></figure>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">function</span> <span class="n">test</span><span class="p">():</span>
-<span class="p">{</span>
- <span class="k">print</span> <span class="s">"notice the blank line before this function?"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">abc</span></code></pre></figure>
 
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function(){ // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://squallordblog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 			</div>
 		</div>
 		<footer>
