@@ -67,16 +67,26 @@
   <span class="k">end</span>
 <span class="k">end</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">show</span>
-  <span class="nd">@widget</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[:</span><span class="nb">id</span><span class="p">])</span>
-  <span class="n">respond_to</span> <span class="n">do</span> <span class="o">|</span><span class="n">format</span><span class="o">|</span>
-    <span class="n">format</span><span class="o">.</span><span class="n">html</span> <span class="c"># show.html.erb</span>
-    <span class="n">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">render</span> <span class="n">json</span><span class="p">:</span> <span class="nd">@widget</span> <span class="p">}</span>
-  <span class="n">end</span>
-<span class="n">end</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">_correctImageOrientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+	<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetchExifData</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="s">'Orientation'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">[</span><span class="s">'Orientation'</span><span class="p">]:</span>
+			<span class="k">return</span> <span class="n">image</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">expand</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">image</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">abc</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">addPaddingIn</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">DEF_PADDING</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">BCKGRND_CLR</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">image</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">print</span> <span class="s">"illegal path to image"</span>
 
+	<span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">padding</span><span class="p">):</span>
+		<span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)],</span> <span class="n">outline</span> <span class="o">=</span> <span class="n">color</span><span class="p">)</span>
+	
+	<span class="k">return</span> <span class="n">img</span></code></pre></figure>
 
 <div id="disqus_thread"></div>
 <script>

@@ -34,15 +34,26 @@ end
 {% endhighlight %}
 
 {% highlight python %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
+def _correctImageOrientation(self, image, number):
+	data = self._fetchExifData(image)
+	if data is not None and 'Orientation' in data:
+		if not data['Orientation']:
+			return image.rotate(90, expand = True)
+	return image
 {% endhighlight %}
 
 {% highlight python %}
-import abc
+def addPaddingIn(image, padding = ct.DEF_PADDING, color = ct.BCKGRND_CLR):
+	if isinstance(image, basestring):
+		img = Image.open(image)
+	elif isinstance(image, Image.Image):
+		img = image
+	else:
+		print "illegal path to image"
+
+	draw = ImageDraw.Draw(img)
+	for i in range(padding):
+		draw.rectangle([0 + (i - 1), 0 + (i - 1), img.size[0] - (i - 1), img.size[1] - (i - 1)], outline = color)
+	
+	return img
 {% endhighlight %}
