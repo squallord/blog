@@ -57,3 +57,6 @@ def addPaddingIn(image, padding = ct.DEF_PADDING, color = ct.BCKGRND_CLR):
 	
 	return img
 {% endhighlight %}
+
+#### Published at {{page.date | date: "%B %d, %Y"}}.
+{: style="text-align: right; font-weight: normal;"}

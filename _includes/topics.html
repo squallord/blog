@@ -1,5 +1,5 @@
 <ul>
-	<li><a href="">Programming</a></li>
-	<li><a href="">2D Art</a></li>
-	<li><a href="">3D Art</a></li>
+{% for type in site.data.types %}
+	<li><a href="{{site.baseurl}}/news">{{type.name}}</a></li>
+{% endfor %}
 </ul>

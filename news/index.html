@@ -6,9 +6,9 @@ layout: news
 
 <ul class="news-list">
 	{% for news in site.posts %}
-	<li class="news-topic">
-		<a href="{{site.baseurl}}{{news.url}}">{{news.title}}</a>
-		<p>{{news.meta}}</p>
-	</li>
+		<li class="news-topic">
+			<a href="{{site.baseurl}}{{news.url}}">{{news.title}}</a>
+			<p>{{news.meta}}</p>
+		</li>
 	{% endfor %}
 </ul>
