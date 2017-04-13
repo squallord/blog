@@ -1,0 +1,16 @@
+---
+layout: news
+---
+
+<h2>Programming News</h2>
+
+<ul class="news-list">
+	{% for news in site.posts %}
+		{% if news.tag == "programming" %}
+			<li class="news-topic">
+				<a href="{{site.baseurl}}{{news.url}}">{{news.title}}</a>
+				<p>{{news.meta}}</p>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

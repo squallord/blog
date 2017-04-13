@@ -30,11 +30,11 @@
 				<p>Topics:</p>
 <ul>
 
-	<li><a href="/news">Programming</a></li>
+	<li><a href="/news/Programming.html">Programming</a></li>
 
-	<li><a href="/news">2D Art</a></li>
+	<li><a href="/news/2D Art.html">2D Art</a></li>
 
-	<li><a href="/news">3D Art</a></li>
+	<li><a href="/news/3D Art.html">3D Art</a></li>
 
 </ul>
 <hr>
@@ -42,57 +42,112 @@
 <p>About me:</p>
 <p>Computer Engineer and Programmer. I love to mess with fun stuff. Nice to meet you! I hope you enjoy my blog and find something useful.</p>
 <hr>
-<p>Email me at:</p>
+<p>E-mail me at:</p>
 <p>squallordis@gmail.com</p>
 			</div>
 
 			<div class="content">
-				<h2 id="etapas-do-desenvolvimento-de-um-programa-de-colagem-de-fotos-em-python-27x">Etapas do desenvolvimento de um programa de colagem de fotos em Python 2.7.x</h2>
+				<h2 id="a-mosaic-photo-gallery-algorithm">A mosaic photo gallery algorithm</h2>
 
-<p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
+<p>Firstly, let’s begin with the actual results. The code can be cloned (or downloaded) at <a href="https://github.com/squallord/mgallery" style="text-decoration: none; color: darkblue">https://github.com/squallord/mgallery</a>. Feel free to use as you wish.</p>
 
-<p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
+<p>Inside mgallery folder there’s this main python file called <strong>mgallery.py</strong> and a folder called <strong>img_folder</strong>. Inside <strong>img_folder</strong> you should put the images. From about 25 to 30 pics should do it. If you don’t use enough pictures, then the program will end with an error message.</p>
 
-<p><img src="/assets/avatar_portrait.jpg" alt="just an image example" class="center-image drop-shadow-image" /></p>
+<p>The main function which you should use to get the job done is <strong>mosaic</strong>. Before calling the main function, you need to call the python interpreter. Just follow the instructions bellow:</p>
 
-<p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
+<ul>
+  <li>Open the bash (ctrl + alt + t in most linux distros);</li>
+  <li>Navigate to mgallery folder in your system;</li>
+  <li>type in python;</li>
+</ul>
 
-<p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
+<p>Then something like this will show up:</p>
 
-<p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>python
+Python 2.7.9 <span class="o">(</span>default, Jun 29 2016, 13:08:31<span class="o">)</span> 
+<span class="o">[</span>GCC 4.9.2] on linux2
+Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span class="s2">"credits"</span> or <span class="s2">"license"</span> <span class="k">for </span>more information.
+<span class="gp">&gt;&gt;&gt; </span></code></pre></figure>
 
-<p>É um <strong>fato</strong> <em>conhecido</em> de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de “Conteúdo aqui, conteúdo aqui”, fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por ‘lorem ipsum’ mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).</p>
+<p>Before we go on I’d like to emphasize that this code is supposed to work just in linux and uses Python 2.7.x (newer versions problaby and/or other systems won’t run it). Here’s how you can make the function call:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">show</span>
-  <span class="vi">@widget</span> <span class="o">=</span> <span class="no">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
-  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
-    <span class="nb">format</span><span class="p">.</span><span class="nf">html</span> <span class="c1"># show.html.erb</span>
-    <span class="nb">format</span><span class="p">.</span><span class="nf">json</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">json: </span><span class="vi">@widget</span> <span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">mgallery</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mgallery</span><span class="o">.</span><span class="n">mosaic</span><span class="p">()</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">_correctImageOrientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
-	<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetchExifData</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="s">'Orientation'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-		<span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">[</span><span class="s">'Orientation'</span><span class="p">]:</span>
-			<span class="k">return</span> <span class="n">image</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">expand</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">image</span></code></pre></figure>
+<p>The mosaic function has some default parameters that will be discussed further. After typing the “<em>enter</em>” key, you should get something like the following output:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">addPaddingIn</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">DEF_PADDING</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">BCKGRND_CLR</span><span class="p">):</span>
-	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
-		<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-	<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
-		<span class="n">img</span> <span class="o">=</span> <span class="n">image</span>
-	<span class="k">else</span><span class="p">:</span>
-		<span class="k">print</span> <span class="s">"illegal path to image"</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pixel chunks: <span class="o">[(</span>1240, 1756<span class="o">)</span>, <span class="o">(</span>1240, 878<span class="o">)</span>, <span class="o">(</span>620, 878<span class="o">)</span>, <span class="o">(</span>620, 439<span class="o">)]</span>
+29 pictures to form a mosaic gallery
+ID: 19 with name download.jpg could not be resized
+program at <span class="c">#1 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 2 &lt;
+rate of images used: 82.14%
+program at <span class="c">#2 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 2 &lt;
+rate of images used: 92.86%
+program at <span class="c">#3 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 1 &lt;
+rate of images used: 82.14%
+program at <span class="c">#4 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 1 &lt;
+rate of images used: 71.43%
+program at <span class="c">#5 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is NOT completed! &lt;
+rate of images used: 85.71%
+program at <span class="c">#6 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 2 &lt;
+rate of images used: 89.29%
+program at <span class="c">#7 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 2 &lt;
+rate of images used: 92.86%
+program at <span class="c">#8 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 2 &lt;
+rate of images used: 89.29%
+program at <span class="c">#9 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 2 &lt;
+rate of images used: 85.71%
+program at <span class="c">#10 attempt ...</span>
+<span class="gp">&gt; </span>this canvas is completed! final attempt: 1 &lt;
+rate of images used: 75.0%
+... 9 completed image canvas
+92.86 is the highest rating of this simulation</code></pre></figure>
 
-	<span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">padding</span><span class="p">):</span>
-		<span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)],</span> <span class="n">outline</span> <span class="o">=</span> <span class="n">color</span><span class="p">)</span>
-	
-	<span class="k">return</span> <span class="n">img</span></code></pre></figure>
+<p>Then, you can navigate to your mgallery folder and find an image called <strong>mosaic_gallery.jpg</strong>. Jus open it an see the result. Pretty cool, right?</p>
 
-<h4 style="text-align: right; font-weight: normal;" id="published-at-march-22-2017">Published at March 22, 2017.</h4>
+<p><img src="/assets/mosaic_gallery_4px_white.jpg" alt="mosaic photo gallery example" class="center-image drop-shadow-image" /></p>
+
+<p>Next step is knowing how to customize this mosaic just a little. The funciton has six parameters. As there’s some complexity involved in most of them, we’ll see just two of them (padding and color) for now. The rest we’ll leave untouched because it requires further knowledge of how the program works. Here is how the function was defined in terms of parameters:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mosaic</span><span class="p">(</span><span class="n">folderName</span> <span class="o">=</span> <span class="s">"img_folder"</span><span class="p">,</span> \
+	   <span class="n">maxAttempts</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">MAX_ATTEMPTS</span><span class="p">,</span> \
+	   <span class="n">paperSize</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">SZ_A3</span><span class="p">,</span> \
+	   <span class="n">clusterPow</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">SZ_CLSTR</span><span class="p">,</span> \
+	   <span class="n">padding</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">DEF_PADDING</span><span class="p">,</span> \
+	   <span class="n">color</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">BCKGRND_CLR</span><span class="p">):</span></code></pre></figure>
+
+<p>Where:</p>
+
+<ul>
+  <li>folderName [string]: relative path to the folder that contains the images. Default value is “img_folder”;</li>
+  <li>maxAttempts [integer]: maximum number of times the algorithm tries to find a solution for the problem. Default value is 10;</li>
+  <li>paperSize [tuple]: size of the paper in pixels. Default value is (3512, 4960);</li>
+  <li>clusterPow [integer]: 2^clusterPow will define a 2^clusterPow x 2^clusterPow canvas to fit the pictures (this will be explained later on). Default value is 3;</li>
+  <li>padding [integer]: padding in pixels to be added to each image. Default value is 2px;</li>
+  <li>color [tuple]: the background color. Default value is (255, 255, 255).</li>
+</ul>
+
+<p>Let’s try to mess with that around a bit. Let’s call the function with these parameters:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">&gt;&gt;&gt; </span>mgallery.mosaic<span class="o">(</span>padding <span class="o">=</span> 10, color <span class="o">=</span> <span class="o">(</span>0, 0, 200<span class="o">))</span></code></pre></figure>
+
+<p>And that will give us this picture:</p>
+
+<p><img src="/assets/mosaic_gallery_10px_blue.jpg" alt="mosaic photo gallery example" class="center-image drop-shadow-image" /></p>
+
+<p>Notice that the borders of each picture are wider and have the blue <strong>rgb</strong>(0, 0, 200) tone to them. These are two of the most important parameters in this function. You can also change the paperSize to a smaller or higher value. But, you should keep the <strong>aspect ratio</strong> (width/height) at <strong>1/1.42</strong> (aproximately one over the square root of two). Other values can result in uneven scaling in some images (this might be improved later).</p>
+
+<h4 style="text-align: right; font-weight: normal; margin: 0; padding: 0" id="published-at-march-22-2017">Published at March 22, 2017.</h4>
+<h4 style="text-align: right; font-weight: normal; margin: 0; padding: 0" id="last-modified-at-april-12-2017">Last modified at April 12, 2017.</h4>
 
 <div id="disqus_thread"></div>
 <script>
