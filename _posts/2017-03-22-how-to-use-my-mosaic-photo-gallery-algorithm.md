@@ -1,7 +1,7 @@
 ---
 layout: news-article
-title: A mosaic photo gallery algorithm
-meta: How I made a program, using Python 2.7.x, to fit photos inside a canvas in a mosaic fashion.
+title: How to use my mosaic photo gallery algorithm
+meta: The basic steps to get things working properly and getting good results.
 category: news
 tag: programming
 ---
@@ -110,9 +110,11 @@ And that will give us this picture:
 
 ![mosaic photo gallery example]({{site.baseurl}}/assets/mosaic_gallery_10px_blue.jpg){: .center-image .drop-shadow-image}
 
-Notice that the borders of each picture are wider and have the blue **rgb**(0, 0, 200) tone to them. These are two of the most important parameters in this function. You can also change the paperSize to a smaller or higher value. But, you should keep the **aspect ratio** (width/height) at **1/1.42** (aproximately one over the square root of two). Other values can result in uneven scaling in some images (this might be improved later).
+Notice that the borders of each picture are wider and have the blue **rgb**(0, 0, 200) tone to them. These are two of the most important parameters in this function. You can also change the paperSize to a smaller or higher value. But, you should keep the **aspect ratio** (width/height) at **1/1.42** (aproximately one over the square root of two). Other values can result in uneven scaling in some images (this might be improved later). You might as well change the the *maxAttempts* value, but I do not recommend to do so. In its current state, the program used about **700 MB** of **RAM** and this number will change accordingly to the **number** of pictures and the **size** of each of them, for example. If you have tons of RAM to spare, changing from **10 attempts** (the default) to **1000** should not be a problem. But, in my experience 10 attempts is a good number if you have a good mix of portrait and landscape pictures (in this example I used 12 portrait and 18 landsape pictures).
+
+That's about all you need to know to get thing working! Hope you enjoyed this article! If you find anything that needs to be improved or have any suggestions, please feel free to leave a comment bellow or e-mail me at <squallordis@gmail.com>{: style="color: blue; text-decoration: none;"}.
 
 #### Published at {{page.date | date: "%B %d, %Y"}}.
 {: style="text-align: right; font-weight: normal; margin: 0; padding: 0"}
-#### Last modified at {{page.last_modified_at | date: "%B %d, %Y"}}.
-{: style="text-align: right; font-weight: normal; margin: 0; padding: 0"}
+{% comment %} #### Last modified at {{page.last_modified_at | date: "%B %d, %Y"}}.
+{: style="text-align: right; font-weight: normal; margin: 0; padding: 0"} {% endcomment %}

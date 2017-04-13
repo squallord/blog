@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="content">
-				<h2 id="a-mosaic-photo-gallery-algorithm">A mosaic photo gallery algorithm</h2>
+				<h2 id="how-to-use-my-mosaic-photo-gallery-algorithm">How to use my mosaic photo gallery algorithm</h2>
 
 <p>Firstly, let’s begin with the actual results. The code can be cloned (or downloaded) at <a href="https://github.com/squallord/mgallery" style="text-decoration: none; color: darkblue">https://github.com/squallord/mgallery</a>. Feel free to use as you wish.</p>
 
@@ -144,10 +144,11 @@ rate of images used: 75.0%
 
 <p><img src="/assets/mosaic_gallery_10px_blue.jpg" alt="mosaic photo gallery example" class="center-image drop-shadow-image" /></p>
 
-<p>Notice that the borders of each picture are wider and have the blue <strong>rgb</strong>(0, 0, 200) tone to them. These are two of the most important parameters in this function. You can also change the paperSize to a smaller or higher value. But, you should keep the <strong>aspect ratio</strong> (width/height) at <strong>1/1.42</strong> (aproximately one over the square root of two). Other values can result in uneven scaling in some images (this might be improved later).</p>
+<p>Notice that the borders of each picture are wider and have the blue <strong>rgb</strong>(0, 0, 200) tone to them. These are two of the most important parameters in this function. You can also change the paperSize to a smaller or higher value. But, you should keep the <strong>aspect ratio</strong> (width/height) at <strong>1/1.42</strong> (aproximately one over the square root of two). Other values can result in uneven scaling in some images (this might be improved later). You might as well change the the <em>maxAttempts</em> value, but I do not recommend to do so. In its current state, the program used about <strong>700 MB</strong> of <strong>RAM</strong> and this number will change accordingly to the <strong>number</strong> of pictures and the <strong>size</strong> of each of them, for example. If you have tons of RAM to spare, changing from <strong>10 attempts</strong> (the default) to <strong>1000</strong> should not be a problem. But, in my experience 10 attempts is a good number if you have a good mix of portrait and landscape pictures (in this example I used 12 portrait and 18 landsape pictures).</p>
+
+<p>That’s about all you need to know to get thing working! Hope you enjoyed this article! If you find anything that needs to be improved or have any suggestions, please feel free to leave a comment bellow or e-mail me at <a href="mailto:squallordis@gmail.com" style="color: blue; text-decoration: none;">squallordis@gmail.com</a>.</p>
 
 <h4 style="text-align: right; font-weight: normal; margin: 0; padding: 0" id="published-at-march-22-2017">Published at March 22, 2017.</h4>
-<h4 style="text-align: right; font-weight: normal; margin: 0; padding: 0" id="last-modified-at-april-12-2017">Last modified at April 12, 2017.</h4>
 
 <div id="disqus_thread"></div>
 <script>
