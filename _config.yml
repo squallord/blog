@@ -1,5 +1,4 @@
 baseurl: ""
 markdown: kramdown
 highlighter: rouge
-gems:
-  - jekyll-last-modified-at
+gems: [jekyll-last-modified-at]
