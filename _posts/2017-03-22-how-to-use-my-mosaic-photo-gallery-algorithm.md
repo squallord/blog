@@ -9,7 +9,7 @@ tag: programming
 {{page.title}}
 ---
 
-Firstly, let's begin with the actual results. The code can be cloned (or downloaded) at <https://github.com/squallord/mgallery>{: style="text-decoration: none; color: darkblue"}. Feel free to use as you wish.
+Firstly, let's begin with the actual results. The code can be cloned (or downloaded) [here](https://github.com/squallord/mgallery){: style="text-decoration: none; color: darkblue"}. Feel free to use as you wish.
 
 Inside mgallery folder there's this main python file called **mgallery.py** and a folder called **img_folder**. Inside **img_folder** you should put the images. From about 25 to 30 pics should do it. If you don't use enough pictures, then the program will end with an error message.
 
