@@ -3,7 +3,7 @@ layout: news-article
 title: The idea behind my mosaic gallery algorithm - Part I
 meta: In this post I'll explain how it came to be. The general idea and the workarounds needed to make it work.
 category: news
-tag: 3dart
+tag: programming
 ---
 
 {{page.title}}
