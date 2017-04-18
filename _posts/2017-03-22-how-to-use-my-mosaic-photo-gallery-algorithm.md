@@ -78,7 +78,7 @@ rate of images used: 75.0%
 
 Then, you can navigate to your mgallery folder and find an image called **mosaic_gallery.jpg**. Jus open it an see the result. Pretty cool, right?
 
-![mosaic photo gallery example]({{site.baseurl}}/assets/mosaic_gallery_4px_white.jpg){: .center-image .drop-shadow-image}
+![mosaic photo gallery example]({{site.baseurl}}/assets/mgallery/mosaic_gallery_4px_white.jpg){: .center-image .drop-shadow-image}
 
 Next step is knowing how to customize this mosaic just a little. The funciton has six parameters. As there's some complexity involved in most of them, we'll see just two of them (padding and color) for now. The rest we'll leave untouched because it requires further knowledge of how the program works. Here is how the function was defined in terms of parameters:
 
@@ -108,11 +108,11 @@ Let's try to mess with that around a bit. Let's call the function with these par
 
 And that will give us this picture:
 
-![mosaic photo gallery example]({{site.baseurl}}/assets/mosaic_gallery_10px_blue.jpg){: .center-image .drop-shadow-image}
+![mosaic photo gallery example]({{site.baseurl}}/assets/mgallery/mosaic_gallery_10px_blue.jpg){: .center-image .drop-shadow-image}
 
 Notice that the borders of each picture are wider and have the blue **rgb**(0, 0, 200) tone to them. These are two of the most important parameters in this function. You can also change the paperSize to a smaller or higher value. But, you should keep the **aspect ratio** (width/height) at **1/1.42** (aproximately one over the square root of two). Other values can result in uneven scaling in some images (this might be improved later). You might as well change the the *maxAttempts* value, but I do not recommend to do so. In its current state, the program used about **700 MB** of **RAM** and this number will change accordingly to the **number** of pictures and the **size** of each of them, for example. If you have tons of RAM to spare, changing from **10 attempts** (the default) to **1000** should not be a problem. But, in my experience 10 attempts is a good number if you have a good mix of portrait and landscape pictures (in this example I used 12 portrait and 18 landsape pictures).
 
-That's about all you need to know to get thing working! Hope you enjoyed this article! If you find anything that needs to be improved or have any suggestions, please feel free to leave a comment bellow or e-mail me at <squallordis@gmail.com>{: style="color: blue; text-decoration: none;"}.
+That's about all you need to know to get things working! Hope you enjoyed this article! If you find anything that needs to be improved or have any suggestions, please feel free to leave a comment bellow or e-mail me at <squallordis@gmail.com>{: style="color: blue; text-decoration: none;"}.
 
 #### Published at {{page.date | date: "%B %d, %Y"}}.
 {: style="text-align: right; font-weight: normal; margin: 0; padding: 0"}
