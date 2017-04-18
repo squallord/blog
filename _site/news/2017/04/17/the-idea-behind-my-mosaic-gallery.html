@@ -47,33 +47,54 @@
 			</div>
 
 			<div class="content">
-				<p>Tho see the functionality of this program, please see <strong>this</strong> before reading the article below.</p>
+				<h2 id="the-idea-behind-my-mosaic-gallery-algorithm---part-i">The idea behind my mosaic gallery algorithm - Part I</h2>
 
-<p>This idea began with my girlfriend asking to me if I could make photo collage to celebrate our first dating anniversary. So, I began to look for some solutions for this problem (including existing programs that already solved this) and this article caught my eye: <a href="http://blog.vjeux.com/2012/image/image-layout-algorithm-lightbox-android.html" style="text-decoration: none; color: darkblue">http://blog.vjeux.com/2012/image/image-layout-algorithm-lightbox-android.html</a>. The basic idea seemed pretty simple and I was already looking for some program to make using the Python language. However, I wanted to place the photos with as less restrictions as possible to make it feel more “organic”.</p>
+<p>Tho see the functionality of this program, please see <a href="/news/2017/03/22/how-to-use-my-mosaic-photo-gallery-algorithm.html" style="text-decoration: none; color: darkblue"><strong>this</strong></a> before reading the article below.</p>
 
-<p>Image manipulation is very expensive, so I thought I could build a simulator (kind of) using only numbers in a txt file. The process is pretty streightforward and we’ll go though it step by step. So, let’s begin with the very first foundation: the <strong>image canvas</strong>. The <strong>image canvas</strong> is an entity created do abstract the final image that will hold all photos together. This abstraction is achieved representing each piece of a picture with a <strong>cluster</strong>. A <strong>cluster</strong> represents a width and height in pixels and will depend both on the paperSize and the clusterPow attribute. A <strong>chunk</strong> is a collection of clusters that represents an image in this <strong>image canvas</strong> enviroment.</p>
+<p>This idea began with my girlfriend asking me if I could make a photo collage to celebrate our first dating anniversary. So, I began to look for some solutions for this problem (including existing programs that already solved this) and <a href="http://blog.vjeux.com/2012/image/image-layout-algorithm-lightbox-android.html" style="text-decoration: none; color: darkblue"><strong>this article</strong></a> caught my eye. The basic idea seemed pretty simple and I was already looking for some program to build using the Python language. However, I wanted to place the photos with as less restrictions as possible to make it feel more “organic”.</p>
 
-<p>The paper will be split into ((2^clusterPow)^2)^2 clusters. The <em>minimal chunk</em> size is 2^clusterPow cluster units which will give us the dimensions of the image canvas which will be <em>mininal chunk size</em> x <em>minimal chunk size</em> in cluster units, or (<em>minimal chunk size</em>)^2. So, the number of paper pieces would be given by (<em>minimal chunk size</em>). This <em>minimal chunk size</em> is the size of the smallest possible picture that could be placed on the <strong>image canvas</strong>.</p>
+<p>Image manipulation is very expensive, so I thought I could build a simulator (kind of) using only numbers in a <strong>txt</strong> file. The process is pretty straightforward and we’ll go through it step by step. So, let’s begin with the very first foundation: the <strong>image canvas</strong>. The <strong>image canvas</strong> is an entity created to abstract the final image that will hold all photos together. This abstraction is achieved by representing each piece of a picture with a <strong>cluster</strong>. A <strong>cluster</strong> has a width and height in pixels and will depend both on the paperSize and the <em>clusterPow</em> attribute. A <strong>chunk</strong> is a collection of <strong>clusters</strong> that represents an image in this <strong>image canvas</strong> enviroment.</p>
 
-<p>“What the hell?!” you might be thinking now. Let’s see an example. Imagine you’ve set <em>clusterPow</em> to 3. That will produce a minimal chunk of 2^3 by 2^3 or 8 by 8 clusters in size. So, the paper will be split into 8 pieces of 8 clusters in its width and height, giving us a total of 64 clusters in each dimension. The total number of <strong>clusters</strong> in this <strong>image canvas</strong> will be 64 x 64 = 4096. Each picture can be associated with a certain cluster. The algoritm works with 4 sizes of clusters, including the minimal cluster. There are 2 sizes for portrait and landscape images. From the smallest to the largest chunk we have: (1, 1), (1, 2), (2, 2), (2, 4). The chunk (2, 4), for example, means that it’s 2 minimal chunks in height (tho rows of minimal chunk) and 4 minimal chunks in width (four columns of minimal chunk). In our previous example, the minimal chunk is 8 by 8 clusters in size, so the chunk (2, 4) will be 16 by 32 clusters. To sum up, we would have:</p>
+<p>The canvas is built in a way that it has <strong>minimal chunk pieces</strong> times <strong>minimal chunk pieces</strong> both in <strong>width</strong> and <strong>height</strong>. A <strong>minimal chunk piece</strong> is evaluated by computing the expression <strong>2^clusterPow</strong> and it corresponds to the <strong>smallest possible picture</strong> in <strong>width</strong> and <strong>height</strong> <strong>clusters units</strong>.</p>
+
+<p>“What the hell?!” you might be thinking now. Let’s see an example. Imagine you’ve set <strong>clusterPow</strong> to <strong>3</strong>. That will produce a minimal chunk of <strong>2^3</strong> by <strong>2^3</strong> or <strong>8</strong> by <strong>8</strong> clusters in size. So, the paper will be split into <strong>8 pieces</strong> of <strong>8 clusters</strong> each in its <strong>width</strong> and <strong>height</strong>, giving us a total of 64 <strong>clusters</strong> in each dimension. The total number of <strong>clusters</strong> in this <strong>image canvas</strong> will be 64 x 64 = 4096 <strong>clusters</strong> (or 8 x 8 = 64 <strong>minimal chunks</strong>). Each picture can be associated with a certain <strong>cluster</strong>. The algoritm works with <strong>4 sizes</strong> of <strong>clusters</strong>, including the <strong>minimal cluster</strong>. There are <strong>2 sizes</strong> for <strong>portrait</strong> and <strong>landscape</strong> images. From the <strong>smallest</strong> to the <strong>largest chunk</strong> we have: (1, 1), (1, 2), (2, 2), (2, 4). The <strong>chunk</strong> (2, 4), for example, means that it’s <strong>2 minimal chunks</strong> in <strong>height</strong> (<strong>two rows</strong> of <strong>minimal chunk</strong>) and <strong>4 minimal chunks</strong> in <strong>width</strong> (<strong>four columns</strong> of <strong>minimal chunk</strong>). In this example, the <strong>minimal chunk</strong> is <strong>8</strong> by <strong>8 clusters</strong> in size, so the <strong>chunk</strong> (2, 4) will be <strong>16</strong> by <strong>32 clusters</strong>. To sum up, we would have:</p>
 
 <ul>
+  <li>clusterPow = 3;</li>
   <li>minimal chunk = 8 by 8 clusters;</li>
-  <li>size of image canvas = 8 minimal clusters in both width and height;</li>
-  <li>size of image canvas = 8 x 8 = 64 clusters in both width and height;</li>
+  <li>size of image canvas = 8 minimal chunks in both width and height, totalizing 64 minimal chunks;</li>
+  <li>size of image canvas = 64 clusters in both width and height, totalizing 4096 clusters;</li>
   <li>chunk (1, 1) = 8 by 8 clusters – the smallest portrait picture;</li>
   <li>chunk (1, 2) = 8 by 16 clusters – the smallest landscape picture;</li>
   <li>chunk (2, 2) = 8 by 8 clusters – the largest portrait picture;</li>
   <li>chunk (2, 4) = 8 by 8 clusters – the largest landcape picture.</li>
 </ul>
 
-<p>But how these clusters and chunks translate into image data? The answer is simple. In this example, we split the canvas in 8 pieces (minimal chunks) in its width and height. If we set the paperSize variable to A3 = (3512, 4960), each cluster will translate to 3512/64 = 54.875 in width and 4960/64 = 77.5 in height. Strange, right? Indeed, you don’t need to think about a single cluster in pixels because clusters are used only to check for image intersection (we’ll see it in further detail) and no image will be represented by a single cluster. The smallest image will be 439 x 620 in pixel units. No half pixels!</p>
+<p>But how these <strong>clusters</strong> and <strong>chunks</strong> translate into image data? The answer is simple. In this example, we split the canvas in <strong>8 pieces</strong> (<strong>minimal chunks</strong>) in its <strong>width</strong> and <strong>height</strong>. If we set the <strong>paperSize</strong> parameter to <strong>A3</strong> = (3512, 4960), each cluster will translate to 3512/64 = <strong>54.875</strong> in <strong>width</strong> and 4960/64 = <strong>77.5</strong> in <strong>height</strong>. Strange, right? Indeed, you don’t need to think about a single <strong>cluster</strong> in pixels because <strong>clusters</strong> are used only to check for <strong>image intersection</strong> (we’ll see it in further detail) and no image will be represented by a single <strong>cluster</strong>. As you know, the smallest possible picture is <strong>8</strong> by <strong>8 clusters</strong> (the <strong>minimal chunk</strong>), which will result in (54.875 x 8) pixels by (77.5 x 8) pixels or <strong>439</strong> pixels by <strong>620</strong> pixels. The other <strong>chunks</strong> are just <strong>linear combinations</strong> of the <strong>smallest chunk</strong> attributes (<strong>width</strong> and <strong>height</strong>). No half pixels!</p>
 
-<p>A blank 64 by 64 image canvas will look like this:</p>
+<p>A blank 64 by 64 <strong>image canvas</strong> should look like this:</p>
 
 <p><img src="/assets/mgallery/blank_canvas_64x64.png" alt="blank canvas 64 x 64" class="center-image drop-shadow-image" /></p>
 
-<p>As the image canvas is filled by pictures, the cluster numbers changes to match the ID of the picture. So, the first picture that the program places in this canvas will have the number 1 assigned in every cluster that represents the image.</p>
+<p>As the <strong>image canvas</strong> is filled by pictures, the <strong>clusters</strong> numbers changes to match the <strong>ID</strong> of the picture. So, the first picture that the program places in this canvas will have the number <strong>1</strong> assigned to it in every <strong>cluster</strong> that represents the image, the second will have number <strong>2</strong> and so on.</p>
+
+<p>Inside <strong>mgallery folder</strong>, there’s a file called <strong>log_highest.txt</strong>. It contais the <strong>highest rating completed image canvas</strong> and is filled with pictures <strong>IDs</strong>.</p>
+
+<p><img src="/assets/mgallery/filled_canvas_64x64.png" alt="filled canvas 64 x 64" class="center-image drop-shadow-image" /></p>
+
+<p>The picture <strong>bellow</strong> just shows how these numbers <strong>translates</strong> into images:</p>
+
+<p><img src="/assets/mgallery/mosaic_gallery_A4_4px.jpg" alt="mosaic photo gallery example A4" class="center-image drop-shadow-image" /></p>
+
+<p>Let’s take a closer look in this <strong>log_highest.txt</strong> file, just the <strong>upper left</strong> part, for example:</p>
+
+<p><img src="/assets/mgallery/filled_canvas_64x64_upper-left.png" alt="filled canvas upper-left 64 x 64" class="center-image drop-shadow-image" /></p>
+
+<p>Let’s take that beautiful landscape whose <strong>ID</strong> is <strong>5</strong>, for example. It fits the <strong>largest landscape chunk</strong>, so it takes <strong>32 clusters</strong> in <strong>width</strong> and <strong>16 clusters</strong> in <strong>height</strong>, as we expected. Remember that every <strong>cluster</strong> that has <strong>5</strong> assigned to it corresponds to the picture whose <strong>ID</strong> is <strong>5</strong>. If you still find confusing all these numbers mixed togheter, just take a look at the picture <strong>bellow</strong>, where I <strong>highlighted</strong> each sector (image chunk).</p>
+
+<p><img src="/assets/mgallery/filled_canvas_64x64_upper-left_highlighted.png" alt="filled canvas upper-left w/ highlighted 64 x 64" class="center-image drop-shadow-image" /></p>
+
+<p>Hopefully, now you’re getting a better understanding on how I’ve set up this “simulator” to fill the final piece with pictures. We’ll continue to explore how this algorithm work in <strong>Part II</strong> of this article. Hope to see you there!</p>
 
 <div id="disqus_thread"></div>
 <script>
