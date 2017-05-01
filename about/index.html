@@ -2,4 +2,5 @@
 layout: default
 ---
 
-{% include under-construction.html %}
+{% capture aboutInclude %} {% include about.md %} {% endcapture %}
+{{ aboutInclude | markdownify }}
